@@ -2,18 +2,24 @@
 
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('register', [AuthController::class, 'showRegister'])->name('register.form');
-Route::post('', [AuthController::class,'register'])->name('register');
+Route::post('register', [AuthController::class,'register'])->name('register');
 
 Route::get('login', [AuthController::class, 'showLogin'])->name('login.form');
-Route::post('', [AuthController::class,'login'])->name('login');
+Route::post('login', [AuthController::class,'login'])->name('login');
 
 Route::get('dashboard', function() {
-    return view('dashboard');
+    return view('components.dashboard');
 })->middleware('auth')->name('dashboard');
+
+Route::post('logout', function () {
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    return redirect('login');
+})->name('logout');
