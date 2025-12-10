@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,9 +19,19 @@ Route::get('dashboard', function() {
     return view('components.dashboard');
 })->middleware('auth')->name('dashboard');
 
-Route::post('logout', function () {
-    Auth::logout();
-    request()->session()->invalidate();
-    request()->session()->regenerateToken();
-    return redirect('login');
+Route::get('projects', function () {
+    return view('components.projects');
+});
+
+Route::get('contact', function () {
+    return view('components.contact');
+});
+
+Route::get('about', function () {
+    return view('components.about');
+});
+
+Route::post('/logout', function () {
+    auth()->logout();
+    return redirect('/login');
 })->name('logout');

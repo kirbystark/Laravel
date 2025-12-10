@@ -1,106 +1,86 @@
 @include('components.header')
+    <style>
 
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background: #f3f6fa;
-    }
 
-    .dashboard-wrapper {
-        max-width: 900px;
-        margin: 40px auto;
-        padding: 20px;
-    }
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #d3d3d2ff, #392d7aff);
+        }
 
-    .dashboard-card {
-        background: linear-gradient(135deg, #ffffff, #eef3ff);
-        padding: 30px;
-        border-radius: 14px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
+        body{
+            min-height: 100vh;
+        }
 
-    .dashboard-card h2 {
-        margin-top: 0;
-        font-size: 28px;
-        color: #2c3e50;
-        text-align: center;
-    }
+        .hero {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-start;  
+            align-items: center;
+            padding-left: 80px;            
+        }
 
-    .welcome-text {
-        text-align: center;
-        font-size: 18px;
-        color: #555;
-        margin-bottom: 25px;
-    }
+        .hero-container {
+            display: flex;
+            align-items: center;
+            gap: 120px;                    
+        }
 
-    .section-title {
-        margin-top: 25px;
-        font-size: 20px;
-        color: #2c3e50;
-        border-left: 4px solid #4A90E2;
-        padding-left: 10px;
-    }
+        .image-box {
+            width: 600px;
+            height: 550px;
+            overflow: hidden;      /* ensures the image stays inside the box */
+        }
 
-    ul.account-details {
-        list-style: none;
-        padding: 0;
-        margin-top: 10px;
-    }
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;      /* fills the box perfectly */
+            object-position: center;/* centers the image inside */
+        }
 
-    ul.account-details li {
-        background: #fff;
-        padding: 10px 15px;
-        border-radius: 8px;
-        margin-bottom: 8px;
-        border: 1px solid #dfe6f3;
-        font-size: 15px;
-        color: #444;
-    }
+        .text-box {
+            line-height: 1.15;
+        }
 
-    .logout-btn {
-        margin-top: 30px;
-        display: block;
-        width: 100%;
-        padding: 12px;
-        text-align: center;
-        background: #e74c3c;
-        color: #fff;
-        font-size: 16px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+        .text-box .small {
+            font-size: 26px;            
+        }
 
-    .logout-btn:hover {
-        background: #c0392b;
-    }
-</style>
+        .text-box h1 {
+            font-size: 100px;         
+            font-weight: bold;
+            margin-left: 20px;
+        }
 
-<div class="dashboard-wrapper">
-    <div class="dashboard-card">
+        .text-box .sub {
+            margin-top: 15px;
+            font-size: 20px;            
+            color: black;
+            margin-left: 200px;
+        }
+    </style>
+</head>
 
-        <h2>Dashboard</h2>
+<body>
 
-        <p class="welcome-text">
-            Welcome back, <strong>{{ auth()->user()->name }}</strong> 👋
-        </p>
+    <section class="hero">
+        <div class="hero-container">
+            <div class="image-box">
+                <img src="images/profile.jpg" alt="Profile Image">
+            </div>
 
-        <h3 class="section-title">Your Account Details</h3>
+            <div class="text-box">
+                <p class="small">Hi, I’m</p>
+                <h1>KIRBY<br>MAYUYU</h1>
+                <p class="sub">welcome to my Portfolio</p>
+            </div>
 
-        <ul class="account-details">
-            <li><strong>Name:</strong> {{ auth()->user()->name }}</li>
-            <li><strong>Email:</strong> {{ auth()->user()->email }}</li>
-        </ul>
+        </div>
+    </section>
 
-        <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <button type="submit" class="logout-btn">Logout</button>
-        </form>
-
-    </div>
-</div>
+</body>
 
 @include('components.footer')
