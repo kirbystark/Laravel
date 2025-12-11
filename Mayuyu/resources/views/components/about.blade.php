@@ -132,7 +132,7 @@
             <div class="skill">
                 <p>html</p>
                 <div class="skill-bar">
-                    <div class="skill-level html">50%</div>
+                    <div class="skill-level html">60%</div>
                 </div>
             </div>
 

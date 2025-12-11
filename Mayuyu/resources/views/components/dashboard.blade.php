@@ -31,14 +31,14 @@
         .image-box {
             width: 600px;
             height: 550px;
-            overflow: hidden;      /* ensures the image stays inside the box */
+            overflow: hidden;      
         }
 
         .image-box img {
             width: 100%;
             height: 100%;
-            object-fit: cover;      /* fills the box perfectly */
-            object-position: center;/* centers the image inside */
+            object-fit: cover;    
+            object-position: center;
         }
 
         .text-box {

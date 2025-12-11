@@ -11,7 +11,7 @@
             position: relative;
             background: #082f6eff;
             color: white;
-            padding: 15px 30px 10px 30px; 
+            padding: 15px 60px 10px 30px; 
             flex-shrink: 0;
         }
 
@@ -71,9 +71,9 @@
 
     <nav>
         <a href="dashboard">Home</a>
+        <a href="about">About</a>
         <a href="projects">Projects</a>
         <a href="contact">Contact</a>
-        <a href="about">About</a>
     </nav>
 </header>
 

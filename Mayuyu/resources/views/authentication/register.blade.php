@@ -8,7 +8,7 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background: #dddbd5ff;
+        background: linear-gradient(135deg, #d3d3d2ff, #392d7aff);
         margin: 0;
         padding: 0;
         min-height: 100vh;
@@ -26,10 +26,10 @@
 
     .auth-container {
         width: 350px;
-        background: linear-gradient(135deg, #535245ff, #CDCCC0);
+        background: #5e5e5eff;
         padding: 30px;
         border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 1);
     }
 
     .auth-container h2 {
