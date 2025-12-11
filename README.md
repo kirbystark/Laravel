@@ -78,7 +78,3 @@ All icons and links use hover effects and are easy to navigate.
 - **Local Asset Images**
 - **Responsive CSS Layout**
 
----
-
-## 📂 Folder Structure
-
